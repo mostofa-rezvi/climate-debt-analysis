@@ -80,13 +80,13 @@ class JointMediationAnalysis:
         # Step 1: Total Effect (X -> Y)
         X_const = sm.add_constant(X)
         model1 = sm.OLS(Y, X_const).fit()
-        c_total = model1.params[1]
-        p_total = model1.pvalues[1]
+        c_total = model1.params['annual_rfq']
+        p_total = model1.pvalues['annual_rfq']
         
         # Step 2: Path a (X -> M)
         model2 = sm.OLS(M, X_const).fit()
-        a_path = model2.params[1]
-        p_a = model2.pvalues[1]
+        a_path = model2.params['annual_rfq']
+        p_a = model2.pvalues['annual_rfq']
         
         # Step 3: Path b and Direct Effect c' (X, M -> Y)
         XM_const = sm.add_constant(pd.concat([X, M], axis=1))

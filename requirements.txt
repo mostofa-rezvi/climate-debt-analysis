@@ -1,9 +1,9 @@
 pandas
 numpy
 scikit-learn
-statsmodels
 matplotlib
 seaborn
+plotly
+statsmodels
 geopandas
 folium
-shap

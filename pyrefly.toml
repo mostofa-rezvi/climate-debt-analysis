@@ -1,0 +1,9 @@
+# Pyrefly configuration for climate-debt-analysis
+# Suppresses false-positive errors from Jupyter notebook cell analysis.
+# Pyrefly analyzes each notebook cell in isolation (as virtual in-memory files),
+# causing spurious "Could not find name" errors for variables defined in other cells.
+
+[python]
+# Only type-check real .py files, not virtual notebook cell fragments
+include = ["scripts/**/*.py", ".agents/**/*.py"]
+exclude = ["**/*.ipynb", ".venv/**"]
